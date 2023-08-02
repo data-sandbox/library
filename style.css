@@ -86,6 +86,7 @@ img.github:hover {
 
 .input,
 .add-button,
+.remove-button,
 .submit-button,
 .close-button {
   padding: 0.5rem;
@@ -96,6 +97,7 @@ img.github:hover {
 }
 
 .add-button,
+.remove-button,
 .submit-button,
 .close-button {
   background-color: var(--gray-dark);
@@ -104,9 +106,15 @@ img.github:hover {
   padding: 0.5rem 1.5rem;
 }
 
-.close-button {
+.close-button,
+.remove-button {
   background-color: var(--gray-light);
   color: var(--gray-dark);
+}
+
+.remove-button {
+  padding: 0.5rem 2rem;
+  width: min-content;
 }
 
 .form-buttons {
@@ -138,7 +146,7 @@ img.github:hover {
 
 .card-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
@@ -148,9 +156,18 @@ img.github:hover {
   padding: 30px 40px;
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 15px;
   border-radius: 1rem;
+  border: solid 1px var(--gray-light);
+  box-shadow: 0 2px 8px 2px var(--gray-light);
 }
+
+.read-container {
+  display: flex;
+  gap: 10px;
+}
+
+/* Modal */
 
 .modal {
   border: solid 1px var(--gray-dark);
@@ -191,18 +208,10 @@ img.github:hover {
   gap: 20px;
 }
 
-.validate-title,
-.validate-author,
-.validate-pages {
+.validate {
   display: flex;
 }
 
-.validate-title.closed,
-.validate-author.closed,
-.validate-pages.closed {
+.validate.closed {
   display: none;
-}
-
-.read-container {
-  display: flex;
 }

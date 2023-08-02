@@ -48,7 +48,7 @@ function getBook() {
 
 function createCard(book) {
   const bookCard = document.createElement('div');
-  const title = document.createElement('p');
+  const title = document.createElement('h2');
   const author = document.createElement('p');
   const pages = document.createElement('p');
   const readContainer = document.createElement('div');
@@ -60,11 +60,12 @@ function createCard(book) {
 
   bookCard.classList.add('card');
   readContainer.classList.add('read-container');
+  removeButton.classList.add('remove-button');
 
   title.textContent = `${book.title}`;
-  author.textContent = book.author;
+  author.textContent = `By ${book.author}`;
   pages.textContent = `${book.pages} pages`;
-  readMsg.textContent = 'Have you read it?'
+  readMsg.textContent = 'Finished reading?'
   removeButton.textContent = 'Remove';
 
   bookCard.appendChild(title);
