@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Library</title>
+  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="container">
+  <header>
+    <h1>Library</h1>
+  </header>
+  <main class="main">
+    <div class="button-container">
+      <button id="add-button" class="add-button">+ Add book</button>
+    </div>
+    <div id="card-grid" class="card-grid"></div>
+  </main>
+  <footer>
+    <p>
+      @data-sandbox
+    </p>
+    <a href="https://github.com/data-sandbox/library" target="_blank"><img
+        src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/github/github-original.svg" class="github" /></a>
+
+  </footer>
+  <!-- modals are commonly placed before closing body tag -->
+  <div id="modal" class="modal closed">
+    <form id="book-form" class="book-form">
+      <div class="title-container field">
+        <input type="text" id="title" class="input" placeholder="Title" maxlength="40" required />
+        <p class="validate-title closed">Please enter a title.</p>
+      </div>
+      <div class="author-container field">
+        <input type="text" id="author" class="input" name="author" placeholder="Author" minlength="1" maxlength="30"
+          required />
+        <p class="validate-author closed">Please enter an author.</p>
+      </div>
+      <div class="pages-container field">
+        <input type="number" id="pages" class="input" placeholder="Pages" required />
+        <p class="validate-pages closed">Please enter number of pages.</p>
+      </div>
+      <div class="checkbox-container">
+        <label for="checkbox" class="checkbox">Have you read it?</label>
+        <input type="checkbox" id="checkbox" class="checkbox">
+      </div>
+      <div class="form-buttons">
+        <button id="submit-button" class="submit-button" type="submit">Submit</button>
+        <button id="close-button" class="close-button">Close</button>
+      </div>
+    </form>
+  </div>
+  <div id="modal-overlay" class="modal-overlay closed"></div>
+</body>
+
+</html>

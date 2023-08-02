@@ -1,0 +1,208 @@
+:root {
+  --gray-light: #d5d1ce;
+  --gray-overlay: #585b63b7;
+  --gray-dark: #585b63;
+  --white-light: #f8f7f5;
+  --white-dark: #efeae7;
+  --green-light: #7c7a3d;
+  --green-dark: #474818;
+  --error-red: rgb(195, 62, 62);
+}
+
+* {
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body {
+  height: 100%;
+  color: var(--gray-dark);
+}
+
+button {
+  color: var(--gray-dark);
+  cursor: pointer;
+}
+
+.container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+}
+
+header {
+  grid-row: 1 / 2;
+  display: flex;
+  background-color: var(--white-light);
+  padding: 20px 30px;
+  z-index: 2;
+  box-shadow: 0 2px 8px 2px var(--gray-light);
+}
+
+main {
+  grid-row: 2 / 3;
+  background-color: var(--white-dark);
+  padding: 20px 30px;
+}
+
+footer {
+  grid-row: 3 / 4;
+  background-color: var(--white-dark);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  gap: 10px;
+}
+
+footer p {
+  font-size: 1.1rem;
+}
+
+img.github {
+  height: 2rem;
+  transition: transform 0.5s ease-in-out;
+}
+
+img.github:hover {
+  transform: rotate(360deg) scale(1.2);
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  height: 100px;
+}
+
+.add-button {
+  padding: 0.7rem 2rem;
+  border-radius: 1rem;
+  height: 50px;
+  border: solid 1px;
+}
+
+.input,
+.add-button,
+.submit-button,
+.close-button {
+  padding: 0.5rem;
+  border-radius: 0.5rem;
+  border: solid 1px var(--gray-dark);
+  background-color: var(--white-light);
+  font-size: 1rem;
+}
+
+.add-button,
+.submit-button,
+.close-button {
+  background-color: var(--gray-dark);
+  color: var(--white-light);
+  border-radius: 1.5rem;
+  padding: 0.5rem 1.5rem;
+}
+
+.close-button {
+  background-color: var(--gray-light);
+  color: var(--gray-dark);
+}
+
+.form-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px
+}
+
+.input {
+  width: 300px;
+}
+
+.field {
+  height: 3rem;
+}
+
+.field p {
+  color: var(--error-red);
+  font-size: 0.8rem;
+}
+
+.checkbox-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+  padding-bottom: 20px;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  border: solid 1px var(--gray-dark);
+  background-color: var(--gray-light);
+  padding: 30px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border-radius: 1rem;
+}
+
+.modal {
+  border: solid 1px var(--gray-dark);
+  background-color: var(--gray-light);
+  border-radius: 1rem;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 30px 20px;
+  z-index: 11;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal.closed {
+  display: none;
+}
+
+.modal-overlay {
+  position: fixed;
+  background-color: var(--gray-overlay);
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
+.modal-overlay.closed {
+  display: none;
+}
+
+.book-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.validate-title,
+.validate-author,
+.validate-pages {
+  display: flex;
+}
+
+.validate-title.closed,
+.validate-author.closed,
+.validate-pages.closed {
+  display: none;
+}
+
+.read-container {
+  display: flex;
+}
